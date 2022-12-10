@@ -1,11 +1,10 @@
 // ==UserScript==
 // @name        Thread Opener Dark
-// @version     0.4
+// @version     0.5
 // @description Adds buttons to open all threads in list and all unread threads in list
 // @match       https://simpcity.su/watched/*
 // @match       https://simpcity.su/forums/*
-// @match       https://simpcity.su/search/*
-// @match       https://nudostar.com/forum/watched/*
+// @match       https://simpcity.su/whats-new/*
 // @match       https://forums.socialmediagirls.com/watched/*
 // @grant       GM_addStyle
 // ==/UserScript==
@@ -38,23 +37,20 @@ document.getElementById ("Unread").addEventListener (
     "click", ButtonClickAction2, false
 );
 
-const timer = ms => new Promise(res => setTimeout(res, ms))
 
-async function ButtonClickAction (zEvent) {
+function ButtonClickAction (zEvent) {
     //Open all threads on page in new tabs
     var links = document.querySelectorAll('.structItem-title a[href*="threads"]');
     for (var J = 0, numLinks = links.length; J < numLinks; ++J) {
-        window.open (links[J].href, '_blank');
-        await timer(100);
+    window.open (links[J].href, '_blank');
     }
 }
 
-async function ButtonClickAction2 (yEvent) {
+function ButtonClickAction2 (yEvent) {
     //Open all unread threads on page in new tabs
     var links = document.querySelectorAll('.structItem-title a[href*="unread"]');
     for (var J = 0, numLinks = links.length; J < numLinks; ++J) {
-        window.open (links[J].href, '_blank');
-        await timer(100);
+    window.open (links[J].href, '_blank');
     }
 }
 
