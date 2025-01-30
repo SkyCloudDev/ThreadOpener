@@ -43,7 +43,7 @@ function ButtonClickAction(yEvent) {
 GM_addStyle ( multilineStr ( function () {/*!
     #myContainer2 {
         position:               fixed;
-        top:                    23%;
+        top:                    20%;
         left:                   0.5%;
         font-size:              1em;
         color:                  #ffffff;
